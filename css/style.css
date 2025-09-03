@@ -2619,7 +2619,7 @@ color: var(--white-color);
     .contact-left { flex: 1 1 55%; }
     .contact-right { flex: 1 1 45%; max-width: 520px; }
     .contact-card { background:#ffffff; border:1px solid #eef2f7; border-radius:12px; padding:16px; }
-    .contact-info-grid { display:flex; gap:16px; flex-wrap:wrap; margin-top:10px; }
+    .contact-info-grid { margin-top:10px; }
     .map-wrap { margin-top:16px; }
     .map-frame { border-radius:12px; overflow:hidden; border:1px solid #eef2f7; }
     .contact-form-grid { display:grid; grid-template-columns: 1fr 1fr; gap:12px; }

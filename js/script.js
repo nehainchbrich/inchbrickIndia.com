@@ -328,7 +328,6 @@ const qa = (sel, root = document) => Array.from(root.querySelectorAll(sel));
       .property-card,
       .featured-property-card,
       .explore-service-card,
-      .popular-city-card,
       .browse-category-img-wrap,
       .investment-highlight,
       .hero-content,
