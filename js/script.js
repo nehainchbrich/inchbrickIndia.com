@@ -443,3 +443,26 @@ const qa = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 
   setTimeout(() => { clonePages(); setSlider(true); }, 10);
 })();
+
+// Listing detail: swap main image on thumbnail click
+(function(){
+  const mainImg = document.getElementById('mainImage');
+  const mainLink = document.getElementById('mainImageLink');
+  if (!mainImg || !mainLink) return;
+  const thumbs = document.querySelectorAll('.gallery-thumbs-vertical .thumb');
+  thumbs.forEach(function(thumb){
+    thumb.addEventListener('click', function(e){
+      // allow Fancybox when user intends to open in lightbox via modifier
+      if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+        e.preventDefault();
+      }
+      const newSrc = this.getAttribute('data-img') || this.getAttribute('href');
+      const newCaption = this.getAttribute('data-caption') || '';
+      if (newSrc) {
+        mainImg.src = newSrc;
+        mainLink.href = newSrc;
+        if (newCaption) mainLink.setAttribute('data-caption', newCaption);
+      }
+    });
+  });
+})();
