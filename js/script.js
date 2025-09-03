@@ -340,23 +340,7 @@ const qa = (sel, root = document) => Array.from(root.querySelectorAll(sel));
       observer.observe(el);
     });
 
-    qa('h1, h2, h3, h4').forEach((h, i) => {
-      h.classList.add('scroll-animate');
-      h.style.animationDelay = `${i * 0.05}s`;
-      observer.observe(h);
-    });
 
-    qa('button, .btn, .explore-now-btn').forEach((btn, i) => {
-      btn.classList.add('scroll-animate');
-      btn.style.animationDelay = `${i * 0.1}s`;
-      observer.observe(btn);
-    });
-
-    qa('input, select, .input-group, .select-group').forEach((el, i) => {
-      el.classList.add('scroll-animate');
-      el.style.animationDelay = `${i * 0.1}s`;
-      observer.observe(el);
-    });
   }
 
   function initParallax() {
