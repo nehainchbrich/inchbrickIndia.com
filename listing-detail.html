@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Property Details - Inch & Brick</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css">
+</head>
+<body>
+  <!-- SVG clipPath for home icon shape -->
+  <svg width="0" height="0" style="position:absolute;">
+    <defs>
+      <clipPath id="homeShape" clipPathUnits="objectBoundingBox">
+        <path d="M0.5,0.05 L0.95,0.4 V0.9 a0.05,0.05 0 0 1 -0.05,0.05 h-0.25 v-0.2 a0.05,0.05 0 0 0 -0.05,-0.05 h-0.2 a0.05,0.05 0 0 0 -0.05,0.05 v0.2 h-0.25 a0.05,0.05 0 0 1 -0.05,-0.05 v-0.5 z" />
+      </clipPath>
+    </defs>
+  </svg>
+  <div class="head-banner">
+   <div class="container">
+  <header class="header">
+    <div class="logo"><a href="index.html"><img src="images/logo.png"></a></div>
+    <nav class="navbar" id="navbar">
+      <button class="close-nav-btn" id="closeNavBtn" aria-label="Close navigation">&times;</button>
+      <a href="index.html#home">Services</a>
+      <a href="index.html#services" class="dropdown-trigger">Property <span class="dropdown-arrow">▼</span></a>
+      <div class="dropdown-menu">
+        <div class="dropdown-content">
+          <div class="dropdown-links">
+            <div class="dropdown-section">
+              <h4>Buy Property</h4>
+              <ul>
+                <li><a href="#apartments">Apartments</a></li>
+                <li><a href="#villas">Villas</a></li>
+                <li><a href="#plots">Plots</a></li>
+                <li><a href="#farmhouses">Farmhouses</a></li>
+                <li><a href="#penthouses">Penthouses</a></li>
+              </ul>
+            </div>
+            <div class="dropdown-section">
+              <h4>Rent Property</h4>
+              <ul>
+                <li><a href="#rent-apartments">Rent Apartments</a></li>
+                <li><a href="#rent-villas">Rent Villas</a></li>
+                <li><a href="#rent-offices">Rent Offices</a></li>
+                <li><a href="#rent-shops">Rent Shops</a></li>
+                <li><a href="#rent-warehouses">Rent Warehouses</a></li>
+              </ul>
+            </div>
+            <div class="dropdown-section">
+              <h4>Commercial</h4>
+              <ul>
+                <li><a href="#office-spaces">Office Spaces</a></li>
+                <li><a href="#retail-spaces">Retail Spaces</a></li>
+                <li><a href="#industrial">Industrial</a></li>
+                <li><a href="#hotels">Hotels</a></li>
+                <li><a href="#land">Land</a></li>
+              </ul>
+            </div>
+            <div class="dropdown-section">
+              <h4>Services</h4>
+              <ul>
+                <li><a href="#property-valuation">Property Valuation</a></li>
+                <li><a href="#legal-services">Legal Services</a></li>
+                <li><a href="#home-loans">Home Loans</a></li>
+                <li><a href="#property-management">Property Management</a></li>
+                <li><a href="#investment-advisory">Investment Advisory</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="dropdown-image">
+            <img src="images/house.jpg" alt="Featured Property">
+            <div class="dropdown-image-overlay">
+              <h3>Featured Property</h3>
+              <p>Luxury Villa in Prime Location</p>
+              <span class="price">₹2.5 Cr</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="#testimonials">Blogs</a>
+      <a href="#contact">Faq</a>
+    </nav>
+    <div class="header-actions">
+      <button class="login-btn">Login</button>
+      <button class="menu-toggle" id="menuToggle">&#9776;</button>
+    </div>
+  </header>
+</div>
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  <div class="banner_other p-2">
+    <div class="container">
+      <h2 class="text-center">Property Details</h2>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="layout">
+
+    <div class="listing-list" style="flex: 1 1 auto;">
+
+      <div class="property-gallery">
+        <div class="property-gallery-main" style="position:relative;">
+          <a href="images/house.jpg" data-fancybox="hero" data-caption="Luxury Apartment in South Delhi">
+            <img src="images/house.jpg" alt="Main Image" style="width:100%; border-radius:12px; display:block;">
+          </a>
+          <div class="hero-overlay" style="position:absolute; left:0; right:0; bottom:0; padding:16px; background:linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 80%); color:#fff; border-radius:0 0 12px 12px; display:flex; align-items:center; justify-content:space-between; gap:12px;">
+            <div>
+              <div style="font-size:18px; opacity:0.9;">South Delhi, New Delhi</div>
+              <div style="font-weight:600; font-size:22px;">Luxury Apartment • 3BHK • 1500 sqft</div>
+            </div>
+            <div style="font-weight:700; font-size:22px; background:#ffffff; color:#111; padding:8px 14px; border-radius:8px;">₹ 2.5 Cr</div>
+          </div>
+        </div>
+        <div class="property-gallery-thumbs d-flex" style="gap:10px; margin-top:10px;">
+          <a href="images/house2.jpg" data-fancybox="hero" data-caption="Bedroom"><img src="images/house2.jpg" alt="Thumb 1" style="width:24%; border-radius:8px;"></a>
+          <a href="images/house3.jpg" data-fancybox="hero" data-caption="Kitchen"><img src="images/house3.jpg" alt="Thumb 2" style="width:24%; border-radius:8px;"></a>
+          <a href="images/slides-img.jpg" data-fancybox="hero" data-caption="Balcony"><img src="images/slides-img.jpg" alt="Thumb 3" style="width:24%; border-radius:8px;"></a>
+          <a href="images/house.jpg" data-fancybox="hero" data-caption="Living Area"><img src="images/house.jpg" alt="Thumb 4" style="width:24%; border-radius:8px;"></a>
+        </div>
+      </div>
+
+      <nav class="property-tabs d-flex" style="gap:16px; margin-top:16px; border-bottom:1px solid #eee; padding-bottom:8px; position:sticky; top:0; background:#fff; z-index:5;">
+        <a href="#overview" class="tab-link" style="padding:8px 12px; border-radius:8px;">Overview</a>
+        <a href="#amenities" class="tab-link" style="padding:8px 12px; border-radius:8px;">Amenities</a>
+        <a href="#furnishing" class="tab-link" style="padding:8px 12px; border-radius:8px;">Furnishing</a>
+        <a href="#reviews" class="tab-link" style="padding:8px 12px; border-radius:8px;">Reviews</a>
+        <a href="#nearby" class="tab-link" style="padding:8px 12px; border-radius:8px;">Nearby Localities</a>
+      </nav>
+
+      <section id="overview">
+        <div class="listing-body" style="margin-top:20px;">
+          <h3 class="listing-title">Luxury Apartment in South Delhi</h3>
+          <p class="listing-meta">3 Bed • 2 Bath • 1500 sqft</p>
+          <div class="d-flex align-items-center justify-space-between">
+            <div class="listing-price">₹ 2.5 Cr</div>
+            <div class="property-address"><img src="images/address-icon.png" alt="Address"> <span> South Delhi, New Delhi</span></div>
+          </div>
+        </div>
+
+        <div class="key-facts" style="margin-top:24px;">
+          <h4>Key Facts</h4>
+          <div class="property-features">
+            <div class="feature"><img src="images/sq-ft.png" alt="Sq Ft"> 1500 sqft</div>
+            <div class="feature"><img src="images/bathroom.png" alt="Bathrooms"> 2 Bath</div>
+            <div class="feature"><img src="images/bedroom.png" alt="Bedrooms"> 3 Bed</div>
+          </div>
+        </div>
+
+        <div class="property-description" style="margin-top:16px;">
+          <h4>Description</h4>
+          <p>
+            Experience modern living in this beautifully designed 3BHK apartment located in the heart of South Delhi. 
+            The home features an open-plan living area, premium flooring, modular kitchen, and ample natural light.
+          </p>
+        </div>
+      </section>
+
+      <section id="amenities">
+        <div class="amenities" style="margin-top:16px;">
+          <h4>Amenities</h4>
+          <ul class="d-flex" style="flex-wrap:wrap; gap:12px;">
+            <li>24x7 Security</li>
+            <li>Power Backup</li>
+            <li>Covered Parking</li>
+            <li>Swimming Pool</li>
+            <li>Gymnasium</li>
+            <li>Children's Play Area</li>
+          </ul>
+        </div>
+
+        <section class="photo-gallery" style="margin-top:16px;">
+          <h4>Photo Gallery</h4>
+          <div class="d-flex" style="gap:12px; flex-wrap:wrap;">
+            <a href="images/house.jpg" data-fancybox="gallery" data-caption="Living Room">
+              <img src="images/house.jpg" alt="Living Room" style="width:180px; height:120px; object-fit:cover; border-radius:10px;">
+            </a>
+            <a href="images/house2.jpg" data-fancybox="gallery" data-caption="Master Bedroom">
+              <img src="images/house2.jpg" alt="Master Bedroom" style="width:180px; height:120px; object-fit:cover; border-radius:10px;">
+            </a>
+            <a href="images/house3.jpg" data-fancybox="gallery" data-caption="Kitchen">
+              <img src="images/house3.jpg" alt="Kitchen" style="width:180px; height:120px; object-fit:cover; border-radius:10px;">
+            </a>
+            <a href="images/slides-img.jpg" data-fancybox="gallery" data-caption="Balcony View">
+              <img src="images/slides-img.jpg" alt="Balcony View" style="width:180px; height:120px; object-fit:cover; border-radius:10px;">
+            </a>
+          </div>
+        </section>
+      </section>
+
+      <section id="furnishing" style="margin-top:16px;">
+        <h4>Furnishing</h4>
+        <ul style="line-height:1.9;">
+          <li>Modular Kitchen with chimney and hob</li>
+          <li>Wardrobes in all bedrooms</li>
+          <li>Premium vitrified tiles and wooden flooring</li>
+          <li>Split AC wiring provision</li>
+        </ul>
+      </section>
+
+      <section id="reviews" style="margin-top:16px;">
+        <h4>Reviews</h4>
+        <div style="background:#f8fafc; border:1px solid #eef2f7; border-radius:10px; padding:12px; margin-bottom:10px;">
+          <div style="font-weight:600;">Amit Verma</div>
+          <div style="opacity:0.8;">“Great neighborhood, very quiet and safe. The apartment is well-ventilated.”</div>
+        </div>
+        <div style="background:#f8fafc; border:1px solid #eef2f7; border-radius:10px; padding:12px;">
+          <div style="font-weight:600;">Neha Sharma</div>
+          <div style="opacity:0.8;">“Loved the layout and the balcony view. Close to markets and metro.”</div>
+        </div>
+      </section>
+
+      <section id="nearby" style="margin-top:16px;">
+        <h4>Nearby Localities</h4>
+        <ul class="d-flex" style="gap:16px; flex-wrap:wrap;">
+          <li>Green Park (1.2 km)</li>
+          <li>Hauz Khas (2.3 km)</li>
+          <li>INA Market (2.1 km)</li>
+          <li>AIIMS Metro (1.8 km)</li>
+        </ul>
+      </section>
+
+      <div class="location" style="margin-top:16px;">
+        <h4>Location</h4>
+        <div style="background:#f3f5f7; border-radius:12px; height:260px; display:flex; align-items:center; justify-content:center;">
+          <span>Map placeholder</span>
+        </div>
+      </div>
+
+    </div>
+
+    <aside class="featured-box" style="max-width:360px;">
+      <h3>Enquire Now</h3>
+      <div class="filter-group">
+        <label>Name</label>
+        <input type="text" placeholder="Your Name">
+      </div>
+      <div class="filter-group">
+        <label>Phone</label>
+        <input type="text" placeholder="Your Phone">
+      </div>
+      <div class="filter-group">
+        <label>Message</label>
+        <textarea rows="4" placeholder="I am interested in this property..."></textarea>
+      </div>
+      <button class="btn-apply">Submit</button>
+
+      <h2 class="featured-title" style="margin-top:24px;">Similar Listings</h2>
+      <div class="featured-item">
+        <img src="images/house2.jpg" alt="Featured 1" class="featured-img">
+        <div class="featured-body">
+          <h4>Modern Villa in Hyderabad</h4>
+          <p class="featured-price">₹ 4.8 Cr</p>
+        </div>
+      </div>
+      <div class="featured-item">
+        <img src="images/house3.jpg" alt="Featured 2" class="featured-img">
+        <div class="featured-body">
+          <h4>Smart Apartment in Pune</h4>
+          <p class="featured-price">₹ 1.2 Cr</p>
+        </div>
+      </div>
+    </aside>
+
+  </div>
+</div>
+
+
+  <!-- Footer -->
+  <footer class="footer-section">
+  <div class="footer-logo-slider-wrap">
+    <div class="footer-logo-slider" id="footerLogoSlider">
+      <div class="footer-logo-track" id="footerLogoTrack">
+        <img src="images/logo-develp.png" alt="Logo 1">
+        <img src="images/logo-develp.png" alt="Logo 2">
+        <img src="images/logo-develp.png" alt="Logo 3">
+        <img src="images/logo-develp.png" alt="Logo 4">
+        <img src="images/logo-develp.png" alt="Logo 5">
+        <img src="images/logo-develp.png" alt="Logo 6">
+        <img src="images/logo-develp.png" alt="Logo 7">
+        <img src="images/logo-develp.png" alt="Logo 8">
+        <img src="images/logo-develp.png" alt="Logo 1">
+        <img src="images/logo-develp.png" alt="Logo 2">
+        <img src="images/logo-develp.png" alt="Logo 3">
+        <img src="images/logo-develp.png" alt="Logo 4">
+        <img src="images/logo-develp.png" alt="Logo 5">
+        <img src="images/logo-develp.png" alt="Logo 6">
+        <img src="images/logo-develp.png" alt="Logo 7">
+        <img src="images/logo-develp.png" alt="Logo 8">
+      </div>
+    </div>
+  </div>
+  <div class="footer-border"></div>
+  <div class="footer-main">
+    <div class="container">
+      <div class="footer-row">
+        <div class="footer-col">
+          <h4>Inch & Brick</h4>
+          <ul>
+            <li><a href="#">Our Services</a></li>
+            <li><a href="#">Price Trends</a></li>
+            <li><a href="#">Post your property</a></li>
+            <li><a href="#">Real Estate Envestment</a></li>
+            <li><a href="#">Builders in India</a></li>
+            <li><a href="#">Area Converter</a></li>
+            <li><a href="#">Articles</a></li>
+            <li><a href="#">Rent Reciept</a></li>
+            <li><a href="#">Customer Service</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Inch & Brick</h4>
+          <ul>
+            <li><a href="#">Our Services</a></li>
+            <li><a href="#">Price Trends</a></li>
+            <li><a href="#">Post your property</a></li>
+            <li><a href="#">Real Estate Envestment</a></li>
+            <li><a href="#">Builders in India</a></li>
+            <li><a href="#">Area Converter</a></li>
+            <li><a href="#">Articles</a></li>
+            <li><a href="#">Rent Reciept</a></li>
+            <li><a href="#">Customer Service</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Inch & Brick</h4>
+          <ul>
+            <li><a href="#">Our Services</a></li>
+            <li><a href="#">Price Trends</a></li>
+            <li><a href="#">Post your property</a></li>
+            <li><a href="#">Real Estate Envestment</a></li>
+            <li><a href="#">Builders in India</a></li>
+            <li><a href="#">Area Converter</a></li>
+            <li><a href="#">Articles</a></li>
+            <li><a href="#">Rent Reciept</a></li>
+            <li><a href="#">Customer Service</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Inch & Brick</h4>
+          <ul>
+            <li><a href="#">Our Services</a></li>
+            <li><a href="#">Price Trends</a></li>
+            <li><a href="#">Post your property</a></li>
+            <li><a href="#">Real Estate Envestment</a></li>
+            <li><a href="#">Builders in India</a></li>
+            <li><a href="#">Area Converter</a></li>
+            <li><a href="#">Articles</a></li>
+            <li><a href="#">Rent Reciept</a></li>
+            <li><a href="#">Customer Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom-row">
+        <div class="footer-social">
+          <a href="#" class="social-link"><img src="images/facebook.svg" alt="Facebook"></a>
+          <a href="#" class="social-link"><img src="images/twitter.svg" alt="Twitter"></a>
+          <a href="#" class="social-link"><img src="images/instagram.svg" alt="Instagram"></a>
+          <a href="#" class="social-link"><img src="images/linkedin.svg" alt="LinkedIn"></a>
+        </div>
+        <div class="footer-copyright">
+          Copyright | All Rights Reserved. Inch & Brick Realty
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+  <script src="js/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
+  <script>
+    (function(){
+      const OFFSET = 80;
+      const links = document.querySelectorAll('.property-tabs .tab-link');
+      const sections = Array.from(links).map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+
+      function setActive() {
+        const scrollPos = document.documentElement.scrollTop || document.body.scrollTop;
+        let current = sections[0];
+        sections.forEach(sec => {
+          const top = sec.getBoundingClientRect().top + window.pageYOffset - OFFSET - 1;
+          if (scrollPos >= top) current = sec;
+        });
+        links.forEach(l => l.classList.remove('active'));
+        const active = Array.from(links).find(l => l.getAttribute('href') === '#' + current.id);
+        if (active) active.classList.add('active');
+      }
+
+      links.forEach(link => {
+        link.addEventListener('click', function(e){
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (!target) return;
+          const top = target.getBoundingClientRect().top + window.pageYOffset - OFFSET;
+          window.scrollTo({ top, behavior: 'smooth' });
+        });
+      });
+
+      window.addEventListener('scroll', setActive);
+      setActive();
+    })();
+  </script>
+</body>
+</html> 

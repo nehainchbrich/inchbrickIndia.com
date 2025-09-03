@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creative Real Estate</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/theme.css">
+</head>
+<body>
+  <!-- SVG clipPath for home icon shape -->
+  <svg width="0" height="0" style="position:absolute;">
+    <defs>
+      <clipPath id="homeShape" clipPathUnits="objectBoundingBox">
+        <path d="M0.5,0.05 L0.95,0.4 V0.9 a0.05,0.05 0 0 1 -0.05,0.05 h-0.25 v-0.2 a0.05,0.05 0 0 0 -0.05,-0.05 h-0.2 a0.05,0.05 0 0 0 -0.05,0.05 v0.2 h-0.25 a0.05,0.05 0 0 1 -0.05,-0.05 v-0.5 z" />
+      </clipPath>
+    </defs>
+  </svg>
+  <div class="head-banner">
+  <!-- Navbar -->
+   <div class="container">
+  <header class="header">
+    <div class="logo"><a href="index.html"><img src="images/logo.png"></a></div>
+    <nav class="navbar" id="navbar">
+      <button class="close-nav-btn" id="closeNavBtn" aria-label="Close navigation">&times;</button>
+      <a href="#home">Services</a>
+      <a href="#services" class="dropdown-trigger">Property <span class="dropdown-arrow">▼</span></a>
+      <div class="dropdown-menu">
+        <div class="dropdown-content">
+          <div class="dropdown-links">
+            <div class="dropdown-section">
+              <h4>Buy Property</h4>
+              <ul>
+                <li><a href="#apartments">Apartments</a></li>
+                <li><a href="#villas">Villas</a></li>
+                <li><a href="#plots">Plots</a></li>
+                <li><a href="#farmhouses">Farmhouses</a></li>
+                <li><a href="#penthouses">Penthouses</a></li>
+              </ul>
+            </div>
+            <div class="dropdown-section">
+              <h4>Rent Property</h4>
+              <ul>
+                <li><a href="#rent-apartments">Rent Apartments</a></li>
+                <li><a href="#rent-villas">Rent Villas</a></li>
+                <li><a href="#rent-offices">Rent Offices</a></li>
+                <li><a href="#rent-shops">Rent Shops</a></li>
+                <li><a href="#rent-warehouses">Rent Warehouses</a></li>
+              </ul>
+            </div>
+            <div class="dropdown-section">
+              <h4>Commercial</h4>
+              <ul>
+                <li><a href="#office-spaces">Office Spaces</a></li>
+                <li><a href="#retail-spaces">Retail Spaces</a></li>
+                <li><a href="#industrial">Industrial</a></li>
+                <li><a href="#hotels">Hotels</a></li>
+                <li><a href="#land">Land</a></li>
+              </ul>
+            </div>
+            <div class="dropdown-section">
+              <h4>Services</h4>
+              <ul>
+                <li><a href="#property-valuation">Property Valuation</a></li>
+                <li><a href="#legal-services">Legal Services</a></li>
+                <li><a href="#home-loans">Home Loans</a></li>
+                <li><a href="#property-management">Property Management</a></li>
+                <li><a href="#investment-advisory">Investment Advisory</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="dropdown-image">
+            <img src="images/house.jpg" alt="Featured Property">
+            <div class="dropdown-image-overlay">
+              <h3>Featured Property</h3>
+              <p>Luxury Villa in Prime Location</p>
+              <span class="price">₹2.5 Cr</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="#testimonials">Blogs</a>
+      <a href="#contact">Faq</a>
+    </nav>
+    <div class="header-actions">
+      <button class="login-btn">Login</button>
+      <button class="menu-toggle" id="menuToggle">&#9776;</button>
+    </div>
+  </header>
+</div>
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  <!-- Creative Banner -->
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-inner">
+        <div class="hero-content">
+          <div class="d-flex align-items-center">
+            <div>
+              <h1>Looking for <br>Dream Home? </h1>
+              <h3>with low price</h3>
+            </div>
+            <a href="#services" class="btn">Book Now</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="images/view-3d-house.png" alt="Dream Home" />
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<section class="find-home">
+  <div class="container">
+    <div class="d-flex align-items-center justify-space-between">
+    <div>
+    <h2>Lets Find Your <span>Dream Home</span></h2>
+    <form class="find-home-form">
+      <div class="input-group">
+        <span class="search-icon">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </span>
+        <input type="text" placeholder="Search for location, property, etc." />
+      </div>
+      <div class="select-group">
+        <span class="select-label">Type</span>
+        <select>
+          <option value="">Property Type</option>
+          <option value="apartment">Apartment</option>
+          <option value="villa">Villa</option>
+          <option value="plot">Plot</option>
+        </select>
+      </div>
+      <button type="submit" class="browse-btn">Browse</button>
+    </form>
+    </div>
+    <div class="explore-property"><img src="images/right-arrow.png" alt="Explore Property"> Explore <br> Properties</div>
+    </div>
+  </div>
+</section>
+
+<section class="auto-slider-section">
+
+    <div class="auto-slider">
+      <div class="auto-slider-track" id="autoSliderTrack">
+        <div class="auto-slider-item property-card">
+          <div class="property-image">
+            <img src="images/slides-img.jpg" alt="Project 1">
+            <span class="property-price">₹1.2 Cr</span>
+            <span class="property-address"><img src="images/address-icon.png" alt="Address"> <span> Main St, City</span></span>
+          </div>
+          <div class="property-features">
+            <div class="feature"><img src="images/sq-ft.png" alt="Sq Ft"> 1200 sqft</div>
+            <div class="feature"><img src="images/bathroom.png" alt="Bathrooms"> 2 Bath</div>
+            <div class="feature"><img src="images/bedroom.png" alt="Bedrooms"> 3 Bed</div>
+          </div>
+        </div>
+        <div class="auto-slider-item property-card">
+          <div class="property-image">
+            <img src="images/slides-img.jpg" alt="Project 1">
+            <span class="property-price">₹1.2 Cr</span>
+            <span class="property-address"><img src="images/address-icon.png" alt="Address"> <span> Main St, City</span></span>
+           </div>
+          <div class="property-features">
+            <div class="feature"><img src="images/sq-ft.png" alt="Sq Ft"> 1200 sqft</div>
+            <div class="feature"><img src="images/bathroom.png" alt="Bathrooms"> 2 Bath</div>
+            <div class="feature"><img src="images/bedroom.png" alt="Bedrooms"> 3 Bed</div>
+           </div>
+        </div>
+        <div class="auto-slider-item property-card">
+          <div class="property-image">
+            <img src="images/slides-img.jpg" alt="Project 1">
+            <span class="property-price">₹1.2 Cr</span>
+            <span class="property-address"><img src="images/address-icon.png" alt="Address"> <span> Main St, City</span></span>
+           </div>
+          <div class="property-features">
+            <div class="feature"><img src="images/sq-ft.png" alt="Sq Ft"> 1200 sqft</div>
+            <div class="feature"><img src="images/bathroom.png" alt="Bathrooms"> 2 Bath</div>
+            <div class="feature"><img src="images/bedroom.png" alt="Bedrooms"> 3 Bed</div>
+           </div>
+        </div>
+        <div class="auto-slider-item property-card">
+          <div class="property-image">
+            <img src="images/slides-img.jpg" alt="Project 1">
+            <span class="property-price">₹1.2 Cr</span>
+            <span class="property-address"><img src="images/address-icon.png" alt="Address"> <span> Main St, City</span></span>
+           </div>
+          <div class="property-features">
+            <div class="feature"><img src="images/sq-ft.png" alt="Sq Ft"> 1200 sqft</div>
+            <div class="feature"><img src="images/bathroom.png" alt="Bathrooms"> 2 Bath</div>
+            <div class="feature"><img src="images/bedroom.png" alt="Bedrooms"> 3 Bed</div>
+           </div>
+        </div>
+        <div class="auto-slider-item property-card">
+          <div class="property-image">
+            <img src="images/slides-img.jpg" alt="Project 1">
+            <span class="property-price">₹1.2 Cr</span>
+            <span class="property-address"><img src="images/address-icon.png" alt="Address"> <span> Main St, City</span></span>
+           </div>
+          <div class="property-features">
+            <div class="feature"><img src="images/sq-ft.png" alt="Sq Ft"> 1200 sqft</div>
+            <div class="feature"><img src="images/bathroom.png" alt="Bathrooms"> 2 Bath</div>
+            <div class="feature"><img src="images/bedroom.png" alt="Bedrooms"> 3 Bed</div>
+           </div>
+        </div>
+        <div class="auto-slider-item property-card">
+          <div class="property-image">
+            <img src="images/slides-img.jpg" alt="Project 1">
+            <span class="property-price">₹1.2 Cr</span>
+            <span class="property-address"><img src="images/address-icon.png" alt="Address"> <span> Main St, City</span></span>
+           </div>
+          <div class="property-features">
+            <div class="feature"><img src="images/sq-ft.png" alt="Sq Ft"> 1200 sqft</div>
+            <div class="feature"><img src="images/bathroom.png" alt="Bathrooms"> 2 Bath</div>
+            <div class="feature"><img src="images/bedroom.png" alt="Bedrooms"> 3 Bed</div>
+           </div>
+        </div>
+      </div>
+    </div>
+ 
+  
+</section>
+
+<section class="featured-property-section">
+  <div class="container">
+    <h2 class="featured-property-title">Featured Properties</h2>
+    <div class="featured-property-slider">
+      <div class="featured-property-track" id="featuredPropertyTrack">
+        <div class="featured-property-item">
+          <div class="featured-property-card">
+            <div class="featured-property-main">
+              <div class="featured-property-img">
+                <img src="images/house.jpg" alt="Luxury Villa">
+              </div>
+              <div class="featured-property-content">
+                <h4>Luxury Villa</h4>
+                <p>Spacious 4BHK villa with modern amenities and beautiful garden view.
+                   Perfect for families looking for comfort and luxury.</p>
+                <div class="d-flex">
+                <div class="featured-property-price">₹2.5 Cr</div>
+                <p>3BHK Apartment</p>
+                <p>Spacious 4BHK villa with modern amenities and beautiful garden view.
+                  Perfect for families looking for comfort and luxury.</p>
+                </div>
+              </div>
+            </div>
+            <div class="featured-property-footer">
+              <div class="featured-property-location">
+                <img src="images/tag.webp" alt="Location"> South Delhi, New Delhi
+              </div>
+              <button class="explore-now-btn">Explore Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="featured-property-item">
+          <div class="featured-property-card">
+            <div class="featured-property-main">
+              <div class="featured-property-img">
+                <img src="images/house2.jpg" alt="Modern Apartment">
+              </div>
+              <div class="featured-property-content">
+                <h4>Luxury Villa</h4>
+                <p>Spacious 4BHK villa with modern amenities and beautiful garden view.
+                   Perfect for families looking for comfort and luxury.</p>
+                <div class="d-flex">
+                <div class="featured-property-price">₹2.5 Cr</div>
+                <p>3BHK Apartment</p>
+                <p>Spacious 4BHK villa with modern amenities and beautiful garden view.
+                  Perfect for families looking for comfort and luxury.</p>
+                </div>
+              </div>
+            </div>
+            <div class="featured-property-footer">
+              <div class="featured-property-location">
+                <img src="images/tag.webp" alt="Location"> Bandra West, Mumbai
+              </div>
+              <button class="explore-now-btn">Explore Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="featured-property-item">
+          <div class="featured-property-card">
+            <div class="featured-property-main">
+              <div class="featured-property-img">
+                <img src="images/house3.jpg" alt="Premium Villa">
+              </div>
+              <div class="featured-property-content">
+                <h4>Luxury Villa</h4>
+                <p>Spacious 4BHK villa with modern amenities and beautiful garden view.
+                   Perfect for families looking for comfort and luxury.</p>
+                <div class="d-flex">
+                <div class="featured-property-price">₹2.5 Cr</div>
+                <p>3BHK Apartment</p>
+                <p>Spacious 4BHK villa with modern amenities and beautiful garden view.
+                  Perfect for families looking for comfort and luxury.</p>
+                </div>
+              </div>
+            </div>
+            <div class="featured-property-footer">
+              <div class="featured-property-location">
+                <img src="images/tag.webp" alt="Location"> Whitefield, Bangalore
+              </div>
+              <button class="explore-now-btn">Explore Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="featured-property-item">
+          <div class="featured-property-card">
+            <div class="featured-property-main">
+              <div class="featured-property-img">
+                <img src="images/house.jpg" alt="Smart Home">
+              </div>
+              <div class="featured-property-content">
+                <h4>Luxury Villa</h4>
+                <p>Spacious 4BHK villa with modern amenities and beautiful garden view.
+                   Perfect for families looking for comfort and luxury.</p>
+                <div class="d-flex">
+                <div class="featured-property-price">₹2.5 Cr</div>
+                <p>3BHK Apartment</p>
+                <p>Spacious 4BHK villa with modern amenities and beautiful garden view.
+                  Perfect for families looking for comfort and luxury.</p>
+                </div>
+              </div>
+            </div>
+            <div class="featured-property-footer">
+              <div class="featured-property-location">
+                <img src="images/tag.webp" alt="Location"> Hinjewadi, Pune
+              </div>
+              <button class="explore-now-btn">Explore Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="featured-property-item">
+          <div class="featured-property-card">
+            <div class="featured-property-main">
+              <div class="featured-property-img">
+                <img src="images/house2.jpg" alt="Garden Villa">
+              </div>
+              <div class="featured-property-content">
+                <h4>Luxury Villa</h4>
+                <p>Spacious 4BHK villa with modern amenities and beautiful garden view.
+                   Perfect for families looking for comfort and luxury.</p>
+                <div class="d-flex">
+                <div class="featured-property-price">₹2.5 Cr</div>
+                <p>3BHK Apartment</p>
+                <p>Spacious 4BHK villa with modern amenities and beautiful garden view.
+                  Perfect for families looking for comfort and luxury.</p>
+                </div>
+              </div>
+            </div>
+            <div class="featured-property-footer">
+              <div class="featured-property-location">
+                <img src="images/tag.webp" alt="Location"> Banjara Hills, Hyderabad
+              </div>
+              <button class="explore-now-btn">Explore Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="featured-property-item">
+          <div class="featured-property-card">
+            <div class="featured-property-main">
+              <div class="featured-property-img">
+                <img src="images/house3.jpg" alt="Penthouse">
+              </div>
+              <div class="featured-property-content">
+                <h4>Luxury Villa</h4>
+                <p>Spacious 4BHK villa with modern amenities and beautiful garden view.
+                   Perfect for families looking for comfort and luxury.</p>
+                <div class="d-flex">
+                <div class="featured-property-price">₹2.5 Cr</div>
+                <p>3BHK Apartment</p>
+                <p>Spacious 4BHK villa with modern amenities and beautiful garden view.
+                  Perfect for families looking for comfort and luxury.</p>
+                </div>
+              </div>
+            </div>
+            <div class="featured-property-footer">
+              <div class="featured-property-location">
+                <img src="images/tag.webp" alt="Location"> Worli, Mumbai
+              </div>
+              <button class="explore-now-btn">Explore Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="featured-slider-btn prev" id="featuredPropertyPrev">&#10094;</button>
+      <button class="featured-slider-btn next" id="featuredPropertyNext">&#10095;</button>
+    </div>
+  </div>
+</section>
+
+<section class="browse-category-section">
+  <div class="container">
+    <div class="browse-category-row">
+      <!-- Column 1 -->
+      <div class="browse-category-col col-1">
+        <div class="browse-category-title">Browse Listing <br> by Category</div>
+        <h4>Limited offers available</h4>
+        <div class="browse-category-img-wrap">
+          <img src="images/house.jpg" alt="Luxury Homes">
+          <div class="img-overlay"><span>Luxury Homes</span></div>
+        </div>
+      </div>
+      <!-- Column 2 -->
+      <div class="browse-category-col col-2">
+        <div class="browse-category-img-wrap">
+          <img src="images/house2.jpg" alt="Apartments">
+          <div class="img-overlay"><span>Apartments</span></div>
+        </div>
+        <div class="browse-category-img-wrap">
+          <img src="images/house3.jpg" alt="Villas">
+          <div class="img-overlay"><span>Villas</span></div>
+        </div>
+      </div>
+      <!-- Column 3 -->
+      <div class="browse-category-col col-3">
+        <div class="browse-category-img-wrap animated">
+          <img src="images/house.jpg" alt="Commercial">
+          <div class="img-overlay animated"><span>Commercial</span></div>
+        </div>
+      
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Services -->
+ 
+
+  <section class="explore-services-section">
+    <div class="container">
+      <h2 class="explore-services-title">Explore Our Services</h2>
+      <div class="explore-services-grid">
+        <div class="explore-service-card">
+          <h4>Buy a Home</h4>
+          <p>Find your dream home from our verified listings and expert guidance.</p>
+          <div class="explore-service-footer">
+            <button class="read-more-btn">Read More</button>
+            <span class="service-icon"><img src="images/builder.png" alt="Buy"></span>
+          </div>
+        </div>
+        <div class="explore-service-card">
+          <h4>Rent a Property</h4>
+          <p>Browse the best rental options in top locations at great prices.</p>
+          <div class="explore-service-footer">
+            <button class="read-more-btn">Read More</button>
+            <span class="service-icon"><img src="images/builder.png" alt="Rent"></span>
+          </div>
+        </div>
+        <div class="explore-service-card">
+          <h4>Commercial Spaces</h4>
+          <p>Discover office spaces, shops, and more for your business needs.</p>
+          <div class="explore-service-footer">
+            <button class="read-more-btn">Read More</button>
+            <span class="service-icon"><img src="images/builder.png" alt="Commercial"></span>
+          </div>
+        </div>
+        <div class="explore-service-card">
+          <h4>Expert Advice</h4>
+          <p>Get guidance from our experienced real estate professionals.</p>
+          <div class="explore-service-footer">
+            <button class="read-more-btn">Read More</button>
+            <span class="service-icon"><img src="images/builder.png" alt="Advice"></span>
+          </div>
+        </div>
+        <div class="explore-service-card">
+          <h4>Sell Your Property</h4>
+          <p>List your property and reach thousands of potential buyers.</p>
+          <div class="explore-service-footer">
+            <button class="read-more-btn">Read More</button>
+            <span class="service-icon"><img src="images/builder.png" alt="Sell"></span>
+          </div>
+        </div>
+        <div class="explore-service-card">
+          <h4>Legal Assistance</h4>
+          <p>Get help with paperwork, registration, and legal formalities.</p>
+          <div class="explore-service-footer">
+            <button class="read-more-btn">Read More</button>
+            <span class="service-icon"><img src="images/builder.png" alt="Legal"></span>
+          </div>
+        </div>
+        <div class="explore-service-card">
+          <h4>Home Loans</h4>
+          <p>Easy and quick home loan assistance from top banks and NBFCs.</p>
+          <div class="explore-service-footer">
+            <button class="read-more-btn">Read More</button>
+            <span class="service-icon"><img src="images/builder.png" alt="Loan"></span>
+          </div>
+        </div>
+        <div class="explore-service-card">
+          <h4>Property Valuation</h4>
+          <p>Get accurate property valuation from our expert team.</p>
+          <div class="explore-service-footer">
+            <button class="read-more-btn">Read More</button>
+            <span class="service-icon"><img src="images/builder.png" alt="Valuation"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Testimonials -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+    <h2 class="popular-cities-title">Popular Cities</h2>
+    <div class="testimonial-slider">
+      <div class="testimonial-slide active">
+        <div class="city-slider-page">
+          <div class="popular-city-card">
+            <img class="city-img" src="https://www.trawell.in/admin/images/upload/078212929Delhi_India_Gate_Main.jpg" alt="Delhi/NCR">
+            <div class="city-info">
+              <div class="city-name">delhi</div>
+              <div class="city-count">85,000+ Properties</div>
+            </div>
+          </div>
+          <div class="popular-city-card">
+            <img class="city-img" src="https://www.trawell.in/admin/images/upload/078212929Delhi_India_Gate_Main.jpg" alt="Bangalore">
+            <div class="city-info">
+              <div class="city-name">Bangalore</div>
+              <div class="city-count">65,000+ Properties</div>
+            </div>
+          </div>
+          <div class="popular-city-card">
+            <img class="city-img" src="https://www.trawell.in/admin/images/upload/078212929Delhi_India_Gate_Main.jpg" alt="Pune">
+            <div class="city-info">
+              <div class="city-name">Pune</div>
+              <div class="city-count">42,000+ Properties</div>
+            </div>
+          </div>
+          <div class="popular-city-card">
+            <img class="city-img" src="https://www.trawell.in/admin/images/upload/078212929Delhi_India_Gate_Main.jpg" alt="Mumbai">
+            <div class="city-info">
+              <div class="city-name">Mumbai</div>
+              <div class="city-count">78,000+ Properties</div>
+            </div>
+          </div>
+          <div class="popular-city-card">
+            <img class="city-img" src="images/city-delhi.jpg" alt="Hyderabad">
+            <div class="city-info">
+              <div class="city-name">Hyderabad</div>
+              <div class="city-count">39,000+ Properties</div>
+            </div>
+          </div>
+          <div class="popular-city-card">
+            <img class="city-img" src="images/city-delhi.jpg" alt="Kolkata">
+            <div class="city-info">
+              <div class="city-name">Kolkata</div>
+              <div class="city-count">28,000+ Properties</div>
+            </div>
+          </div>
+          <div class="popular-city-card">
+            <img class="city-img" src="images/city-delhi.jpg" alt="Chennai">
+            <div class="city-info">
+              <div class="city-name">Chennai</div>
+              <div class="city-count">33,000+ Properties</div>
+            </div>
+          </div>
+          <div class="popular-city-card">
+            <img class="city-img" src="images/city-delhi.jpg" alt="Ahmedabad">
+            <div class="city-info">
+              <div class="city-name">Ahmedabad</div>
+              <div class="city-count">22,000+ Properties</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-slide">
+        <div class="city-slider-page">
+          <div class="popular-city-card">
+            <img class="city-img" src="images/city-delhi.jpg" alt="Delhi/NCR">
+            <div class="city-info">
+              <div class="city-name">Delhi/NCR</div>
+              <div class="city-count">85,000+ Properties</div>
+            </div>
+          </div>
+          <div class="popular-city-card">
+            <img class="city-img" src="images/city-delhi.jpg" alt="Bangalore">
+            <div class="city-info">
+              <div class="city-name">Bangalore</div>
+              <div class="city-count">65,000+ Properties</div>
+            </div>
+          </div>
+          <div class="popular-city-card">
+            <img class="city-img" src="images/city-delhi.jpg" alt="Pune">
+            <div class="city-info">
+              <div class="city-name">Pune</div>
+              <div class="city-count">42,000+ Properties</div>
+            </div>
+          </div>
+          <div class="popular-city-card">
+            <img class="city-img" src="images/city-delhi.jpg" alt="Mumbai">
+            <div class="city-info">
+              <div class="city-name">Mumbai</div>
+              <div class="city-count">78,000+ Properties</div>
+            </div>
+          </div>
+          <div class="popular-city-card">
+            <img class="city-img" src="images/city-delhi.jpg" alt="Hyderabad">
+            <div class="city-info">
+              <div class="city-name">Hyderabad</div>
+              <div class="city-count">39,000+ Properties</div>
+            </div>
+          </div>
+          <div class="popular-city-card">
+            <img class="city-img" src="images/city-delhi.jpg" alt="Kolkata">
+            <div class="city-info">
+              <div class="city-name">Kolkata</div>
+              <div class="city-count">28,000+ Properties</div>
+            </div>
+          </div>
+          <div class="popular-city-card">
+            <img class="city-img" src="images/city-delhi.jpg" alt="Chennai">
+            <div class="city-info">
+              <div class="city-name">Chennai</div>
+              <div class="city-count">33,000+ Properties</div>
+            </div>
+          </div>
+          <div class="popular-city-card">
+            <img class="city-img" src="images/city-delhi.jpg" alt="Ahmedabad">
+            <div class="city-info">
+              <div class="city-name">Ahmedabad</div>
+              <div class="city-count">22,000+ Properties</div>
+            </div>
+          </div>
+        </div>
+      </div>
+     
+    </div>
+    <button class="slider-btn prev" id="testimonialPrev">&#10094;</button>
+    <button class="slider-btn next" id="testimonialNext">&#10095;</button>
+  </div>
+  </section>
+
+<section class="property-serach">
+  <div class="container">
+    <div class="browse-category-title">Have a property to sell?</div>
+    <div class="property-sell">
+      <div>
+      <h4>List your property for sale</h4>
+      <button class="sell-btn">Sell your property</button>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="investment-highlights-section" style="background-position: center;
+    background-size: cover;background-image: url(images/graph.png);">
+  <div class="container investment-highlights-container">
+    <div class="investment-highlights-grid">
+      <div class="investment-highlight">
+        <div class="highlight-icon"><span>₹</span></div>
+        <div class="highlight-text">
+          <div class="highlight-value">50,000</div>
+          <div class="highlight-label">Minimum Investment</div>
+        </div>
+      </div>
+      <div class="investment-highlight">
+        <div class="highlight-icon"><span>₹</span></div>
+        <div class="highlight-text">
+          <div class="highlight-value">50,000</div>
+          <div class="highlight-label">Gross Entry Yield</div>
+        </div>
+      </div>
+      <div class="investment-highlight">
+        <div class="highlight-icon"><span>%</span></div>
+        <div class="highlight-text">
+          <div class="highlight-value">11.3%</div>
+          <div class="highlight-label">Target IRR</div>
+        </div>
+      </div>
+      <div class="investment-highlight">
+        <div class="highlight-icon"><span>×</span></div>
+        <div class="highlight-text">
+          <div class="highlight-value">3.0x</div>
+          <div class="highlight-label">Target Multiple</div>
+        </div>
+      </div>
+    </div>
+    
+   
+  </div>
+</section>
+
+  <!-- Footer -->
+  <footer class="footer-section">
+  <div class="footer-logo-slider-wrap">
+    <div class="footer-logo-slider" id="footerLogoSlider">
+      <div class="footer-logo-track" id="footerLogoTrack">
+        <img src="images/logo-develp.png" alt="Logo 1">
+        <img src="images/logo-develp.png" alt="Logo 2">
+        <img src="images/logo-develp.png" alt="Logo 3">
+        <img src="images/logo-develp.png" alt="Logo 4">
+        <img src="images/logo-develp.png" alt="Logo 5">
+        <img src="images/logo-develp.png" alt="Logo 6">
+        <img src="images/logo-develp.png" alt="Logo 7">
+        <img src="images/logo-develp.png" alt="Logo 8">
+        <!-- Duplicate for seamless loop -->
+        <img src="images/logo-develp.png" alt="Logo 1">
+        <img src="images/logo-develp.png" alt="Logo 2">
+        <img src="images/logo-develp.png" alt="Logo 3">
+        <img src="images/logo-develp.png" alt="Logo 4">
+        <img src="images/logo-develp.png" alt="Logo 5">
+        <img src="images/logo-develp.png" alt="Logo 6">
+        <img src="images/logo-develp.png" alt="Logo 7">
+        <img src="images/logo-develp.png" alt="Logo 8">
+      </div>
+    </div>
+  </div>
+  <div class="footer-border"></div>
+  <div class="footer-main">
+    <div class="container">
+      <div class="footer-row">
+        <div class="footer-col">
+          <h4>Inch & Brick</h4>
+          <ul>
+            <li><a href="#">Our Services</a></li>
+            <li><a href="#">Price Trends</a></li>
+            <li><a href="#">Post your property</a></li>
+            <li><a href="#">Real Estate Envestment</a></li>
+            <li><a href="#">Builders in India</a></li>
+            <li><a href="#">Area Converter</a></li>
+            <li><a href="#">Articles</a></li>
+            <li><a href="#">Rent Reciept</a></li>
+            <li><a href="#">Customer Service</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Inch & Brick</h4>
+          <ul>
+            <li><a href="#">Our Services</a></li>
+            <li><a href="#">Price Trends</a></li>
+            <li><a href="#">Post your property</a></li>
+            <li><a href="#">Real Estate Envestment</a></li>
+            <li><a href="#">Builders in India</a></li>
+            <li><a href="#">Area Converter</a></li>
+            <li><a href="#">Articles</a></li>
+            <li><a href="#">Rent Reciept</a></li>
+            <li><a href="#">Customer Service</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Inch & Brick</h4>
+          <ul>
+            <li><a href="#">Our Services</a></li>
+            <li><a href="#">Price Trends</a></li>
+            <li><a href="#">Post your property</a></li>
+            <li><a href="#">Real Estate Envestment</a></li>
+            <li><a href="#">Builders in India</a></li>
+            <li><a href="#">Area Converter</a></li>
+            <li><a href="#">Articles</a></li>
+            <li><a href="#">Rent Reciept</a></li>
+            <li><a href="#">Customer Service</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Inch & Brick</h4>
+          <ul>
+            <li><a href="#">Our Services</a></li>
+            <li><a href="#">Price Trends</a></li>
+            <li><a href="#">Post your property</a></li>
+            <li><a href="#">Real Estate Envestment</a></li>
+            <li><a href="#">Builders in India</a></li>
+            <li><a href="#">Area Converter</a></li>
+            <li><a href="#">Articles</a></li>
+            <li><a href="#">Rent Reciept</a></li>
+            <li><a href="#">Customer Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom-row">
+        <div class="footer-social">
+          <a href="#" class="social-link"><img src="images/facebook.svg" alt="Facebook"></a>
+          <a href="#" class="social-link"><img src="images/twitter.svg" alt="Twitter"></a>
+          <a href="#" class="social-link"><img src="images/instagram.svg" alt="Instagram"></a>
+          <a href="#" class="social-link"><img src="images/linkedin.svg" alt="LinkedIn"></a>
+        </div>
+        <div class="footer-copyright">
+          Copyright | All Rights Reserved. Inch & Brick Realty
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+  <script src="js/script.js"></script>
+</body>
+</html>

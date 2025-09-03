@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog - Inch & Brick</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/theme.css">
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute;">
+    <defs>
+      <clipPath id="homeShape" clipPathUnits="objectBoundingBox">
+        <path d="M0.5,0.05 L0.95,0.4 V0.9 a0.05,0.05 0 0 1 -0.05,0.05 h-0.25 v-0.2 a0.05,0.05 0 0 0 -0.05,-0.05 h-0.2 a0.05,0.05 0 0 0 -0.05,0.05 v0.2 h-0.25 a0.05,0.05 0 0 1 -0.05,-0.05 v-0.5 z" />
+      </clipPath>
+    </defs>
+  </svg>
+  <div class="head-banner">
+   <div class="container">
+  <header class="header">
+    <div class="logo"><a href="index.html"><img src="images/logo.png"></a></div>
+    <nav class="navbar" id="navbar">
+      <button class="close-nav-btn" id="closeNavBtn" aria-label="Close navigation">&times;</button>
+      <a href="index.html#home">Services</a>
+      <a href="index.html#services" class="dropdown-trigger">Property <span class="dropdown-arrow">▼</span></a>
+      <div class="dropdown-menu">
+        <div class="dropdown-content">
+          <div class="dropdown-links">
+            <div class="dropdown-section">
+              <h4>Buy Property</h4>
+              <ul>
+                <li><a href="#apartments">Apartments</a></li>
+                <li><a href="#villas">Villas</a></li>
+                <li><a href="#plots">Plots</a></li>
+                <li><a href="#farmhouses">Farmhouses</a></li>
+                <li><a href="#penthouses">Penthouses</a></li>
+              </ul>
+            </div>
+            <div class="dropdown-section">
+              <h4>Rent Property</h4>
+              <ul>
+                <li><a href="#rent-apartments">Rent Apartments</a></li>
+                <li><a href="#rent-villas">Rent Villas</a></li>
+                <li><a href="#rent-offices">Rent Offices</a></li>
+                <li><a href="#rent-shops">Rent Shops</a></li>
+                <li><a href="#rent-warehouses">Rent Warehouses</a></li>
+              </ul>
+            </div>
+            <div class="dropdown-section">
+              <h4>Commercial</h4>
+              <ul>
+                <li><a href="#office-spaces">Office Spaces</a></li>
+                <li><a href="#retail-spaces">Retail Spaces</a></li>
+                <li><a href="#industrial">Industrial</a></li>
+                <li><a href="#hotels">Hotels</a></li>
+                <li><a href="#land">Land</a></li>
+              </ul>
+            </div>
+            <div class="dropdown-section">
+              <h4>Services</h4>
+              <ul>
+                <li><a href="#property-valuation">Property Valuation</a></li>
+                <li><a href="#legal-services">Legal Services</a></li>
+                <li><a href="#home-loans">Home Loans</a></li>
+                <li><a href="#property-management">Property Management</a></li>
+                <li><a href="#investment-advisory">Investment Advisory</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="dropdown-image">
+            <img src="images/house.jpg" alt="Featured Property">
+            <div class="dropdown-image-overlay">
+              <h3>Featured Property</h3>
+              <p>Luxury Villa in Prime Location</p>
+              <span class="price">₹2.5 Cr</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="#testimonials">Blogs</a>
+      <a href="#contact">Faq</a>
+    </nav>
+    <div class="header-actions">
+      <button class="login-btn">Login</button>
+      <button class="menu-toggle" id="menuToggle">&#9776;</button>
+    </div>
+  </header>
+</div>
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  <div class="banner_other p-2">
+    <div class="container">
+      <h2 class="text-center">Our Blog</h2>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <section class="blog-listing">
+    <div class="blog-hero">
+      <div class="blog-hero-text">
+        <h2>Insights on Real Estate</h2>
+        <p>News, guides, and tips to make smarter property decisions.</p>
+      </div>
+    </div>
+
+    <div class="blog-grid">
+      <article class="blog-card">
+        <a href="#" class="blog-image-link">
+          <img src="images/house.jpg" alt="Market Trends 2025" class="blog-image">
+        </a>
+        <div class="blog-content">
+          <div class="blog-meta"><span>Market</span> • <span>5 min read</span></div>
+          <h3 class="blog-title"><a href="#">Top Real Estate Market Trends in 2025</a></h3>
+          <p class="blog-excerpt">From affordable housing to luxury demand—see what’s shaping the market this year.</p>
+          <a href="#" class="blog-read-more">Read more →</a>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <a href="#" class="blog-image-link">
+          <img src="images/house2.jpg" alt="Vastu Tips" class="blog-image">
+        </a>
+        <div class="blog-content">
+          <div class="blog-meta"><span>Guides</span> • <span>4 min read</span></div>
+          <h3 class="blog-title"><a href="#">Vastu Tips to Improve Your Home Energy</a></h3>
+          <p class="blog-excerpt">Simple changes that can elevate your home’s positivity and comfort.</p>
+          <a href="#" class="blog-read-more">Read more →</a>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <a href="#" class="blog-image-link">
+          <img src="images/house3.jpg" alt="Home Loan" class="blog-image">
+        </a>
+        <div class="blog-content">
+          <div class="blog-meta"><span>Finance</span> • <span>6 min read</span></div>
+          <h3 class="blog-title"><a href="#">How to Get the Best Home Loan Rates</a></h3>
+          <p class="blog-excerpt">A practical checklist to secure the lowest interest rates and quick approvals.</p>
+          <a href="#" class="blog-read-more">Read more →</a>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <a href="#" class="blog-image-link">
+          <img src="images/slides-img.jpg" alt="Interior Design" class="blog-image">
+        </a>
+        <div class="blog-content">
+          <div class="blog-meta"><span>Design</span> • <span>3 min read</span></div>
+          <h3 class="blog-title"><a href="#">Interior Design Ideas for Compact Spaces</a></h3>
+          <p class="blog-excerpt">Smart storage and layout ideas to make small homes feel bigger.</p>
+          <a href="#" class="blog-read-more">Read more →</a>
+        </div>
+      </article>
+    </div>
+
+    <div class="blog-pagination">
+      <a href="#" class="page-link active">1</a>
+      <a href="#" class="page-link">2</a>
+      <a href="#" class="page-link">3</a>
+      <a href="#" class="page-link">Next →</a>
+    </div>
+  </section>
+</div>
+
+  <footer class="footer-section">
+  <div class="footer-logo-slider-wrap">
+    <div class="footer-logo-slider" id="footerLogoSlider">
+      <div class="footer-logo-track" id="footerLogoTrack">
+        <img src="images/logo-develp.png" alt="Logo 1">
+        <img src="images/logo-develp.png" alt="Logo 2">
+        <img src="images/logo-develp.png" alt="Logo 3">
+        <img src="images/logo-develp.png" alt="Logo 4">
+        <img src="images/logo-develp.png" alt="Logo 5">
+        <img src="images/logo-develp.png" alt="Logo 6">
+        <img src="images/logo-develp.png" alt="Logo 7">
+        <img src="images/logo-develp.png" alt="Logo 8">
+        <img src="images/logo-develp.png" alt="Logo 1">
+        <img src="images/logo-develp.png" alt="Logo 2">
+        <img src="images/logo-develp.png" alt="Logo 3">
+        <img src="images/logo-develp.png" alt="Logo 4">
+        <img src="images/logo-develp.png" alt="Logo 5">
+        <img src="images/logo-develp.png" alt="Logo 6">
+        <img src="images/logo-develp.png" alt="Logo 7">
+        <img src="images/logo-develp.png" alt="Logo 8">
+      </div>
+    </div>
+  </div>
+  <div class="footer-border"></div>
+  <div class="footer-main">
+    <div class="container">
+      <div class="footer-row">
+        <div class="footer-col">
+          <h4>Inch & Brick</h4>
+          <ul>
+            <li><a href="#">Our Services</a></li>
+            <li><a href="#">Price Trends</a></li>
+            <li><a href="#">Post your property</a></li>
+            <li><a href="#">Real Estate Envestment</a></li>
+            <li><a href="#">Builders in India</a></li>
+            <li><a href="#">Area Converter</a></li>
+            <li><a href="#">Articles</a></li>
+            <li><a href="#">Rent Reciept</a></li>
+            <li><a href="#">Customer Service</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Inch & Brick</h4>
+          <ul>
+            <li><a href="#">Our Services</a></li>
+            <li><a href="#">Price Trends</a></li>
+            <li><a href="#">Post your property</a></li>
+            <li><a href="#">Real Estate Envestment</a></li>
+            <li><a href="#">Builders in India</a></li>
+            <li><a href="#">Area Converter</a></li>
+            <li><a href="#">Articles</a></li>
+            <li><a href="#">Rent Reciept</a></li>
+            <li><a href="#">Customer Service</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Inch & Brick</h4>
+          <ul>
+            <li><a href="#">Our Services</a></li>
+            <li><a href="#">Price Trends</a></li>
+            <li><a href="#">Post your property</a></li>
+            <li><a href="#">Real Estate Envestment</a></li>
+            <li><a href="#">Builders in India</a></li>
+            <li><a href="#">Area Converter</a></li>
+            <li><a href="#">Articles</a></li>
+            <li><a href="#">Rent Reciept</a></li>
+            <li><a href="#">Customer Service</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Inch & Brick</h4>
+          <ul>
+            <li><a href="#">Our Services</a></li>
+            <li><a href="#">Price Trends</a></li>
+            <li><a href="#">Post your property</a></li>
+            <li><a href="#">Real Estate Envestment</a></li>
+            <li><a href="#">Builders in India</a></li>
+            <li><a href="#">Area Converter</a></li>
+            <li><a href="#">Articles</a></li>
+            <li><a href="#">Rent Reciept</a></li>
+            <li><a href="#">Customer Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom-row">
+        <div class="footer-social">
+          <a href="#" class="social-link"><img src="images/facebook.svg" alt="Facebook"></a>
+          <a href="#" class="social-link"><img src="images/twitter.svg" alt="Twitter"></a>
+          <a href="#" class="social-link"><img src="images/instagram.svg" alt="Instagram"></a>
+          <a href="#" class="social-link"><img src="images/linkedin.svg" alt="LinkedIn"></a>
+        </div>
+        <div class="footer-copyright">
+          Copyright | All Rights Reserved. Inch & Brick Realty
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+  <script src="js/script.js"></script>
+</body>
+</html>

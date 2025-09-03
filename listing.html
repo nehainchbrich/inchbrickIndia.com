@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creative Real Estate</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <!-- SVG clipPath for home icon shape -->
+  <svg width="0" height="0" style="position:absolute;">
+    <defs>
+      <clipPath id="homeShape" clipPathUnits="objectBoundingBox">
+        <path d="M0.5,0.05 L0.95,0.4 V0.9 a0.05,0.05 0 0 1 -0.05,0.05 h-0.25 v-0.2 a0.05,0.05 0 0 0 -0.05,-0.05 h-0.2 a0.05,0.05 0 0 0 -0.05,0.05 v0.2 h-0.25 a0.05,0.05 0 0 1 -0.05,-0.05 v-0.5 z" />
+      </clipPath>
+    </defs>
+  </svg>
+  <div class="head-banner">
+  <!-- Navbar -->
+   <div class="container">
+  <header class="header">
+    <div class="logo"><a href="index.html"><img src="images/logo.png"></a></div>
+    <nav class="navbar" id="navbar">
+      <button class="close-nav-btn" id="closeNavBtn" aria-label="Close navigation">&times;</button>
+      <a href="#home">Services</a>
+      <a href="#services" class="dropdown-trigger">Property <span class="dropdown-arrow">▼</span></a>
+      <div class="dropdown-menu">
+        <div class="dropdown-content">
+          <div class="dropdown-links">
+            <div class="dropdown-section">
+              <h4>Buy Property</h4>
+              <ul>
+                <li><a href="#apartments">Apartments</a></li>
+                <li><a href="#villas">Villas</a></li>
+                <li><a href="#plots">Plots</a></li>
+                <li><a href="#farmhouses">Farmhouses</a></li>
+                <li><a href="#penthouses">Penthouses</a></li>
+              </ul>
+            </div>
+            <div class="dropdown-section">
+              <h4>Rent Property</h4>
+              <ul>
+                <li><a href="#rent-apartments">Rent Apartments</a></li>
+                <li><a href="#rent-villas">Rent Villas</a></li>
+                <li><a href="#rent-offices">Rent Offices</a></li>
+                <li><a href="#rent-shops">Rent Shops</a></li>
+                <li><a href="#rent-warehouses">Rent Warehouses</a></li>
+              </ul>
+            </div>
+            <div class="dropdown-section">
+              <h4>Commercial</h4>
+              <ul>
+                <li><a href="#office-spaces">Office Spaces</a></li>
+                <li><a href="#retail-spaces">Retail Spaces</a></li>
+                <li><a href="#industrial">Industrial</a></li>
+                <li><a href="#hotels">Hotels</a></li>
+                <li><a href="#land">Land</a></li>
+              </ul>
+            </div>
+            <div class="dropdown-section">
+              <h4>Services</h4>
+              <ul>
+                <li><a href="#property-valuation">Property Valuation</a></li>
+                <li><a href="#legal-services">Legal Services</a></li>
+                <li><a href="#home-loans">Home Loans</a></li>
+                <li><a href="#property-management">Property Management</a></li>
+                <li><a href="#investment-advisory">Investment Advisory</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="dropdown-image">
+            <img src="images/house.jpg" alt="Featured Property">
+            <div class="dropdown-image-overlay">
+              <h3>Featured Property</h3>
+              <p>Luxury Villa in Prime Location</p>
+              <span class="price">₹2.5 Cr</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="#testimonials">Blogs</a>
+      <a href="#contact">Faq</a>
+    </nav>
+    <div class="header-actions">
+      <button class="login-btn">Login</button>
+      <button class="menu-toggle" id="menuToggle">&#9776;</button>
+    </div>
+  </header>
+</div>
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  <!-- Creative Banner -->
+<div class="banner_other p-2">
+  <div class="container">
+  <h2 class="text-center">Listing Banner</h2>
+  </div>
+</div>
+</div>
+
+
+<div class="container">
+  <div class="layout">
+  <!-- Right: Featured Listings -->
+  <aside class="featured-box">
+    <h3>Filter Properties</h3>
+
+  <div class="filter-group">
+    <label>Property Type</label>
+    <select>
+      <option>Any</option>
+      <option>Apartment</option>
+      <option>Villa</option>
+      <option>Penthouse</option>
+      <option>Studio</option>
+    </select>
+  </div>
+
+  <div class="filter-group">
+    <label>Bedrooms</label>
+    <div class="d-flex">
+      <input type="checkbox" id="bed1"> <label for="bed1">1 BHK</label><br>
+      <input type="checkbox" id="bed2"> <label for="bed2">2 BHK</label><br>
+      <input type="checkbox" id="bed3"> <label for="bed3">3 BHK</label><br>
+      <input type="checkbox" id="bed4"> <label for="bed4">4+ BHK</label>
+    </div>
+  </div>
+
+  <div class="filter-group">
+    <label>Bathrooms</label>
+    <div class="d-flex">
+      <input type="checkbox" id="bath1"> <label for="bath1">1</label><br>
+      <input type="checkbox" id="bath2"> <label for="bath2">2</label><br>
+      <input type="checkbox" id="bath3"> <label for="bath3">3+</label>
+    </div>
+  </div>
+
+  <div class="filter-group">
+    <label>Size (sq ft)</label>
+    <input type="number" placeholder="Min">
+    <input type="number" placeholder="Max" style="margin-top: 8px;">
+  </div>
+
+  <div class="filter-group">
+    <label>Price Range</label>
+    <input type="range" min="0" max="10000000" step="100000" value="3000000">
+    <div class="range-values">
+      <span>₹0</span>
+      <span>₹1 Cr+</span>
+    </div>
+  </div>
+
+  <button class="btn-apply">Apply Filters</button>
+
+    <h2 class="featured-title">Featured Listings</h2>
+
+    <div class="featured-item">
+      <img src="images/house.jpg" alt="Featured 1" class="featured-img">
+      <div class="featured-body">
+        <h4>Penthouse in Bangalore</h4>
+        <p class="featured-price">₹ 7.2 Cr</p>
+      </div>
+    </div>
+
+    <div class="featured-item">
+      <img src="images/house2.jpg" alt="Featured 2" class="featured-img">
+      <div class="featured-body">
+        <h4>Beach House in Goa</h4>
+        <p class="featured-price">₹ 3.5 Cr</p>
+      </div>
+    </div>
+
+    <div class="featured-item">
+      <img src="images/house3.jpg" alt="Featured 3" class="featured-img">
+      <div class="featured-body">
+        <h4>Smart Apartment in Pune</h4>
+        <p class="featured-price">₹ 1.2 Cr</p>
+      </div>
+    </div>
+  </aside>
+    <!-- Left: Property List -->
+    <div class="listing-list">
+
+      <div class="listing-item">
+         <!-- 🔹 Ribbon added -->
+        <img src="images/house.jpg" alt="Property 1" class="listing-img">
+        <div class="listing-body">
+          <div class="d-flex justify-space-between">
+          <h3 class="listing-title">Montiva by VIDA</h3>
+          <div class="ribbon apartment">Apartment</div>
+          </div>
+          <p class="text-allipsis">Montiva by VIDA – Waterfront Living at Dubai Creek Harbour | Marina Access | Sc...</p>
+          <div class="d-flex justify-space-between">
+            <p class="listing-meta my-0">4 Bed • 3 Bath • 3000 sqft</p>
+            <strong class="text-warning">AED 4.4M</strong>
+            </div>
+            <small class="my-0"><i class="fas fa-map-marker-alt"></i> Dubai Creek Harbour, Dubai</small>
+            <hr>
+            <div class="d-flex justify-space-between">
+            <p class="my-1"><small><i class="fa fa-building"></i> MERAAS</small></p>
+          <p class="my-1"><small><i class="fa fa-user-alt"></i> Saurav Kumar</small></p>
+          </div>
+          <a href="listing-detail.html" class="btn-view">Add to Compare</a>
+          <a href="listing-detail.html" class="btn-view">Read More</a>
+        </div>
+      </div>
+
+      <div class="listing-item">
+        <!-- 🔹 Ribbon added -->
+       <img src="images/house.jpg" alt="Property 1" class="listing-img">
+       <div class="listing-body">
+         <div class="d-flex justify-space-between">
+         <h3 class="listing-title">Montiva by VIDA</h3>
+         <div class="ribbon villa">Villa</div>
+         </div>
+         <p class="text-allipsis">Montiva by VIDA – Waterfront Living at Dubai Creek Harbour | Marina Access | Sc...</p>
+         <div class="d-flex justify-space-between">
+           <p class="listing-meta my-0">4 Bed • 3 Bath • 3000 sqft</p>
+           <strong class="text-warning">AED 4.4M</strong>
+           </div>
+           <small class="my-0"><i class="fas fa-map-marker-alt"></i> Dubai Creek Harbour, Dubai</small>
+           <hr>
+           <div class="d-flex justify-space-between">
+           <p class="my-1"><small><i class="fa fa-building"></i> MERAAS</small></p>
+         <p class="my-1"><small><i class="fa fa-user-alt"></i> Saurav Kumar</small></p>
+         </div>
+         <a href="listing-detail.html" class="btn-view">Add to Compare</a>
+         <a href="listing-detail.html" class="btn-view">Read More</a>
+       </div>
+     </div>
+
+     <div class="listing-item">
+      <!-- 🔹 Ribbon added -->
+     <img src="images/house.jpg" alt="Property 1" class="listing-img">
+     <div class="listing-body">
+       <div class="d-flex justify-space-between">
+       <h3 class="listing-title">Montiva by VIDA</h3>
+       <div class="ribbon townhouse">Townhouse</div>
+       </div>
+       <p class="text-allipsis">Montiva by VIDA – Waterfront Living at Dubai Creek Harbour | Marina Access | Sc...</p>
+       <div class="d-flex justify-space-between">
+         <p class="listing-meta my-0">4 Bed • 3 Bath • 3000 sqft</p>
+         <strong class="text-warning">AED 4.4M</strong>
+         </div>
+         <small class="my-0"><i class="fas fa-map-marker-alt"></i> Dubai Creek Harbour, Dubai</small>
+         <hr>
+         <div class="d-flex justify-space-between">
+         <p class="my-1"><small><i class="fa fa-building"></i> MERAAS</small></p>
+       <p class="my-1"><small><i class="fa fa-user-alt"></i> Saurav Kumar</small></p>
+       </div>
+       <a href="listing-detail.html" class="btn-view">Add to Compare</a>
+       <a href="listing-detail.html" class="btn-view">Read More</a>
+     </div>
+   </div>
+    </div>
+
+  
+
+  </div>
+</div>
+
+  <!-- Footer -->
+  <footer class="footer-section">
+  <div class="footer-logo-slider-wrap">
+    <div class="footer-logo-slider" id="footerLogoSlider">
+      <div class="footer-logo-track" id="footerLogoTrack">
+        <img src="images/logo-develp.png" alt="Logo 1">
+        <img src="images/logo-develp.png" alt="Logo 2">
+        <img src="images/logo-develp.png" alt="Logo 3">
+        <img src="images/logo-develp.png" alt="Logo 4">
+        <img src="images/logo-develp.png" alt="Logo 5">
+        <img src="images/logo-develp.png" alt="Logo 6">
+        <img src="images/logo-develp.png" alt="Logo 7">
+        <img src="images/logo-develp.png" alt="Logo 8">
+        <!-- Duplicate for seamless loop -->
+        <img src="images/logo-develp.png" alt="Logo 1">
+        <img src="images/logo-develp.png" alt="Logo 2">
+        <img src="images/logo-develp.png" alt="Logo 3">
+        <img src="images/logo-develp.png" alt="Logo 4">
+        <img src="images/logo-develp.png" alt="Logo 5">
+        <img src="images/logo-develp.png" alt="Logo 6">
+        <img src="images/logo-develp.png" alt="Logo 7">
+        <img src="images/logo-develp.png" alt="Logo 8">
+      </div>
+    </div>
+  </div>
+  <div class="footer-border"></div>
+  <div class="footer-main">
+    <div class="container">
+      <div class="footer-row">
+        <div class="footer-col">
+          <h4>Inch & Brick</h4>
+          <ul>
+            <li><a href="#">Our Services</a></li>
+            <li><a href="#">Price Trends</a></li>
+            <li><a href="#">Post your property</a></li>
+            <li><a href="#">Real Estate Envestment</a></li>
+            <li><a href="#">Builders in India</a></li>
+            <li><a href="#">Area Converter</a></li>
+            <li><a href="#">Articles</a></li>
+            <li><a href="#">Rent Reciept</a></li>
+            <li><a href="#">Customer Service</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Inch & Brick</h4>
+          <ul>
+            <li><a href="#">Our Services</a></li>
+            <li><a href="#">Price Trends</a></li>
+            <li><a href="#">Post your property</a></li>
+            <li><a href="#">Real Estate Envestment</a></li>
+            <li><a href="#">Builders in India</a></li>
+            <li><a href="#">Area Converter</a></li>
+            <li><a href="#">Articles</a></li>
+            <li><a href="#">Rent Reciept</a></li>
+            <li><a href="#">Customer Service</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Inch & Brick</h4>
+          <ul>
+            <li><a href="#">Our Services</a></li>
+            <li><a href="#">Price Trends</a></li>
+            <li><a href="#">Post your property</a></li>
+            <li><a href="#">Real Estate Envestment</a></li>
+            <li><a href="#">Builders in India</a></li>
+            <li><a href="#">Area Converter</a></li>
+            <li><a href="#">Articles</a></li>
+            <li><a href="#">Rent Reciept</a></li>
+            <li><a href="#">Customer Service</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Inch & Brick</h4>
+          <ul>
+            <li><a href="#">Our Services</a></li>
+            <li><a href="#">Price Trends</a></li>
+            <li><a href="#">Post your property</a></li>
+            <li><a href="#">Real Estate Envestment</a></li>
+            <li><a href="#">Builders in India</a></li>
+            <li><a href="#">Area Converter</a></li>
+            <li><a href="#">Articles</a></li>
+            <li><a href="#">Rent Reciept</a></li>
+            <li><a href="#">Customer Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom-row">
+        <div class="footer-social">
+          <a href="#" class="social-link"><img src="images/facebook.svg" alt="Facebook"></a>
+          <a href="#" class="social-link"><img src="images/twitter.svg" alt="Twitter"></a>
+          <a href="#" class="social-link"><img src="images/instagram.svg" alt="Instagram"></a>
+          <a href="#" class="social-link"><img src="images/linkedin.svg" alt="LinkedIn"></a>
+        </div>
+        <div class="footer-copyright">
+          Copyright | All Rights Reserved. Inch & Brick Realty
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+  <script src="js/script.js"></script>
+</body>
+</html>
