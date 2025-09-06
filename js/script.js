@@ -258,18 +258,39 @@ const qa = (sel, root = document) => Array.from(root.querySelectorAll(sel));
   const next = q('#featuredPropertyNext');
   const slider = q('.featured-property-slider');
 
-  let visible = 3, current = 0, transitioning = false, cloned = false, autoplay = null;
+  let visible = 3;
+  let current = 0;
+  let transitioning = false;
+  let cloned = false;
+  let autoplay = null;
 
   const updateVisible = () => {
-    visible = window.innerWidth <= 500 ? 1 : window.innerWidth <= 1100 ? 2 : 3;
+    const newVisible = window.innerWidth <= 500 ? 1 : window.innerWidth <= 1100 ? 2 : 3;
+    if (newVisible !== visible) {
+      visible = newVisible;
+      // force re-clone when breakpoint changes
+      cloned = false;
+    }
   };
 
   const clone = () => {
     if (cloned) return;
+    // remove old clones then add new ones
     track.querySelectorAll('.slider-clone').forEach(el => el.remove());
     const items = qa('.featured-property-item:not(.slider-clone)', track);
-    const first = items.slice(0, visible).map(n => { const c = n.cloneNode(true); c.classList.add('slider-clone'); return c; });
-    const last  = items.slice(-visible).map(n => { const c = n.cloneNode(true); c.classList.add('slider-clone'); return c; });
+    if (!items.length) return;
+
+    const first = items.slice(0, visible).map(n => {
+      const c = n.cloneNode(true);
+      c.classList.add('slider-clone');
+      return c;
+    });
+    const last = items.slice(-visible).map(n => {
+      const c = n.cloneNode(true);
+      c.classList.add('slider-clone');
+      return c;
+    });
+
     last.forEach(c => track.insertBefore(c, track.firstChild));
     first.forEach(c => track.appendChild(c));
     cloned = true;
@@ -279,68 +300,129 @@ const qa = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 
   const setSlider = (noTransition = false) => {
     updateVisible();
-    if (!cloned) clone();
+    clone();
+
     const items = all();
-    const itemW = items[0]?.offsetWidth || 350;
+    if (!items.length) return;
+
+    // width + gap
+    const itemW = items[0].offsetWidth || 350;
     const gap = parseInt(getComputedStyle(track).gap || '30', 10);
-    const moveX = (itemW + gap) * (current + visible);
-    track.style.transition = noTransition ? 'none' : 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+    const moveX = (itemW + gap) * (current + visible); // offset for leading clones
+
+    track.style.transition = noTransition ? 'none' : 'transform 0.5s ease-in-out';
     track.style.transform = `translateX(-${moveX}px)`;
+
+    // if removing transition, force a reflow so subsequent transitions behave correctly
+    if (noTransition) void track.offsetWidth;
   };
 
-  const nextSlide = () => { if (transitioning) return; transitioning = true; current++; setSlider(); };
-  const prevSlide = () => { if (transitioning) return; transitioning = true; current--; setSlider(); };
+  const nextSlide = () => {
+    if (transitioning) return;
+    transitioning = true;
+    current++;
+    setSlider();
+  };
+
+  const prevSlide = () => {
+    if (transitioning) return;
+    transitioning = true;
+    current--;
+    setSlider();
+  };
 
   if (next) next.addEventListener('click', nextSlide);
   if (prev) prev.addEventListener('click', prevSlide);
 
   track.addEventListener('transitionend', () => {
+    // real slide count (exclude clones)
     const real = track.querySelectorAll('.featured-property-item:not(.slider-clone)').length;
-    if (current >= real) { current = 0; setSlider(true); }
-    else if (current < 0) { current = real - 1; setSlider(true); }
+
+    // if we slid into the clone at the end, reset to first real (no transition)
+    if (current >= real) {
+      current = 0;
+      // wait for paint, then reset without transition
+      requestAnimationFrame(() => requestAnimationFrame(() => setSlider(true)));
+    }
+    // if we slid into the clone at the start, reset to last real (no transition)
+    else if (current < 0) {
+      current = real - 1;
+      requestAnimationFrame(() => requestAnimationFrame(() => setSlider(true)));
+    }
+
     transitioning = false;
   });
 
-  const start = () => { stop(); autoplay = setInterval(nextSlide, 4000); };
-  const stop = () => { if (autoplay) clearInterval(autoplay); };
+  const start = () => {
+    stop();
+    autoplay = setInterval(() => {
+      if (!transitioning) nextSlide();
+    }, 4000);
+  };
 
+  const stop = () => {
+    if (autoplay) {
+      clearInterval(autoplay);
+      autoplay = null;
+    }
+  };
+
+  // pause on hover / touch
   if (slider) {
     slider.addEventListener('mouseenter', stop);
     slider.addEventListener('mouseleave', start);
+    slider.addEventListener('touchstart', stop, { passive: true });
+    slider.addEventListener('touchend', start, { passive: true });
   }
 
-  window.addEventListener('resize', () => { cloned = false; setSlider(true); });
+  window.addEventListener('resize', () => {
+    updateVisible();
+    // safe reset on breakpoint change
+    current = 0;
+    cloned = false;
+    setSlider(true);
+  });
 
-  setTimeout(() => { setSlider(true); start(); }, 100);
+  // init
+  updateVisible();
+  clone();
+  setSlider(true);
+  start();
 })();
 
+
+
+// ------- Scroll / reveal animations -------
 // ------- Scroll / reveal animations -------
 (() => {
   const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('animate-in'); });
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('animate-in');
+    });
   }, observerOptions);
 
   function initScrollAnimations() {
-    qa('section').forEach(section => { section.classList.add('scroll-animate'); observer.observe(section); });
+    // Animate only block-level sections
+    qa('section').forEach(section => {
+      section.classList.add('scroll-animate');
+      observer.observe(section);
+    });
 
+    // Animate cards, images, blocks (no text elements)
     qa(`
       .property-card,
       .featured-property-card,
       .explore-service-card,
       .browse-category-img-wrap,
       .investment-highlight,
-      .hero-content,
       .hero-image,
-      .find-home-form,
       .explore-property
     `).forEach((el, i) => {
       el.classList.add('scroll-animate');
       el.style.animationDelay = `${i * 0.1}s`;
       observer.observe(el);
     });
-
-
   }
 
   function initParallax() {
@@ -353,10 +435,19 @@ const qa = (sel, root = document) => Array.from(root.querySelectorAll(sel));
   }
 
   function initRevealAnimations() {
-    qa('.hero-content, .find-home h2, .featured-property-title').forEach(el => { el.classList.add('reveal-left'); observer.observe(el); });
-    qa('.hero-image, .explore-property').forEach(el => { el.classList.add('reveal-right'); observer.observe(el); });
-    qa('.property-card, .featured-property-card, .explore-service-card').forEach(el => { el.classList.add('reveal-bottom'); observer.observe(el); });
-    qa('.browse-category-img-wrap, .investment-highlight').forEach(el => { el.classList.add('reveal-scale'); observer.observe(el); });
+    // Removed text selectors like .hero-content, .find-home h2, .featured-property-title
+    qa('.hero-image, .explore-property').forEach(el => {
+      el.classList.add('reveal-right');
+      observer.observe(el);
+    });
+    qa('.property-card, .featured-property-card, .explore-service-card').forEach(el => {
+      el.classList.add('reveal-bottom');
+      observer.observe(el);
+    });
+    qa('.browse-category-img-wrap, .investment-highlight').forEach(el => {
+      el.classList.add('reveal-scale');
+      observer.observe(el);
+    });
   }
 
   document.addEventListener('DOMContentLoaded', () => {
@@ -365,6 +456,7 @@ const qa = (sel, root = document) => Array.from(root.querySelectorAll(sel));
     initRevealAnimations();
   });
 })();
+
 
 // ------- City slider (2-row, by page) -------
 (() => {
@@ -394,38 +486,56 @@ const qa = (sel, root = document) => Array.from(root.querySelectorAll(sel));
   const setSlider = (noTransition = false) => {
     const p = pages();
     const pageW = p[0]?.offsetWidth || track.offsetWidth;
-    track.style.transition = noTransition ? 'none' : 'transform 0.5s cubic-bezier(.4,2,.6,1)';
-    track.style.transform = `translateX(-${(current + 1) * pageW}px)`;
+    track.style.transition = noTransition ? 'none' : 'transform 0.5s ease-in-out';
+    track.style.transform = `translateX(-${(current + 1) * pageW}px)`; // +1 offset for leading clone
   };
 
-  const nextSlide = () => { if (transitioning) return; transitioning = true; current++; setSlider(); };
-  const prevSlide = () => { if (transitioning) return; transitioning = true; current--; setSlider(); };
+  const nextSlide = () => {
+    if (transitioning) return;
+    transitioning = true;
+    current++;
+    setSlider();
+  };
+
+  const prevSlide = () => {
+    if (transitioning) return;
+    transitioning = true;
+    current--;
+    setSlider();
+  };
 
   if (next) next.addEventListener('click', nextSlide);
   if (prev) prev.addEventListener('click', prevSlide);
 
   window.addEventListener('resize', () => {
-    track.querySelectorAll('.slider-clone').forEach(el => el.remove());
     current = 0;
     clonePages();
     setSlider(true);
   });
 
   track.addEventListener('transitionend', () => {
-    const p = pages();
-    // indexes with clones present: [cloneLast][0..n-1][cloneFirst]
-    if (current >= p.length - 2) { // moved past real last to cloneFirst
+    const p = pages(); // includes clones
+    const realCount = p.length - 2; // real slides only
+
+    if (current >= realCount) {
+      // reached cloneFirst → reset to first real
       current = 0;
-      setTimeout(() => setSlider(true), 20);
-    } else if (current < 0) { // moved before real first to cloneLast
-      current = (p.length - 2) - 1;
-      setTimeout(() => setSlider(true), 20);
+      setSlider(true);
+    } else if (current < 0) {
+      // reached cloneLast → reset to last real
+      current = realCount - 1;
+      setSlider(true);
     }
     transitioning = false;
   });
 
-  setTimeout(() => { clonePages(); setSlider(true); }, 10);
+  // init
+  setTimeout(() => {
+    clonePages();
+    setSlider(true);
+  }, 50);
 })();
+
 
 // Listing detail: swap main image on thumbnail click
 (function(){
@@ -449,3 +559,5 @@ const qa = (sel, root = document) => Array.from(root.querySelectorAll(sel));
     });
   });
 })();
+
+// ------- Image Gallery Slider -------

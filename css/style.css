@@ -8,6 +8,10 @@ body {
   overflow-x: hidden;
   font-family: math;
 }
+.my-0{
+  margin-top: 0;
+  margin-bottom: 0;
+}
 select, input, input::placeholder{
   font-family: "CenturyGothicPaneuropeanLight" !important;
   font-weight: normal;
@@ -16,6 +20,7 @@ select, input, input::placeholder{
 .justify-space-between{
   justify-content: space-between;
 }
+
 /* select, input, .select-group{
   box-shadow: -1px 2px 11px 0px #88888873;
 } */
@@ -476,10 +481,11 @@ margin-bottom: .6rem;
 }
 .hero-content {
   flex: 1 1 0;
+  padding: 2rem 0;
 }
 .hero-content h1 {
   font-size: 3.8rem;
-  margin-bottom: 16px;
+  margin-bottom: 2px;
   margin-top: 2rem;
   letter-spacing: 1px;
 }
@@ -501,10 +507,10 @@ margin-bottom: .6rem;
     display: block;
 }
 .hero-content h3{
-  font-size: 3rem;
+  font-size: 2rem;
   margin-top: 0;
   font-weight: 100;
-  color: #fff;
+  color: #ff8400;
 }
 .hero-content .btn{
     background: #ff8400;
@@ -566,12 +572,13 @@ margin-bottom: .6rem;
 }
 
 .testimonials {
-  padding: 60px 20px 40px 20px;
+  padding: 60px 20px 1px 20px;
   position: relative;
 }
 .testimonials h2 {
   font-size: 2rem;
   margin-bottom: 5px;
+  margin-top: 0;
 }
 .testimonial-slider {
   position: relative;
@@ -677,7 +684,7 @@ button, select, input{
   border-radius: 6px;
   font-size: 1rem;
   min-width: 220px;
-  outline: none;
+  box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075) !important;
   transition: border 0.2s;
 }
 .input-group input[type="text"]:focus {
@@ -737,6 +744,7 @@ button, select, input{
   display: flex;
   align-items: stretch;
   border-radius: 0 !important;
+  box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075) !important;
   overflow: hidden;
   background: #fff;
   min-width: 264px;
@@ -748,7 +756,6 @@ button, select, input{
   padding: 0.75rem 1rem;
   display: flex;
   align-items: center;
-  border-right: 1px solid #ddd;
   font-size: 1rem;
   white-space: nowrap;
 }
@@ -2285,6 +2292,7 @@ button, select, input{
 
 .property-serach.animate-in {
   animation: bounceIn 1s ease-out;
+  padding-top: 1.8rem;
 }
 
 @keyframes bounceIn {
@@ -2945,7 +2953,7 @@ transform: translateY(-50%);
 background: rgba(0,0,0,0.5);
 color: #fff;
 border: none;
-padding: 10px 15px;
+padding: 0 0;
 cursor: pointer;
 border-radius: 50%;
 z-index: 10;
@@ -3222,3 +3230,5 @@ blockquote {
   color: #e63946;
   font-size: 14px;
 }
+
+/* ===== IMAGE GALLERY SECTION ===== */

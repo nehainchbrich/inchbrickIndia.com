@@ -395,7 +395,7 @@
       <!-- Column 1 -->
       <div class="browse-category-col col-1">
         <div class="browse-category-title">Browse Listing <br> by Category</div>
-        <h4>Limited offers available</h4>
+        <h4 class="my-0">Limited offers available</h4>
         <div class="browse-category-img-wrap">
           <img src="images/house.jpg" alt="Luxury Homes">
           <div class="img-overlay"><span>Luxury Homes</span></div>
@@ -426,7 +426,6 @@
 
   <!-- Services -->
  
-
   <div class="explore-services-section">
     <div class="container">
       <h2 class="explore-services-title">Explore Our Services</h2>
@@ -629,10 +628,211 @@
     <button class="slider-btn next" id="testimonialNext">&#10095;</button>
   </div>
 </div>
+<!-- gallery -->
+   <!-- gallery start -->
+  <div class="gallery-wrapper">
+    <div class="container">
+    <h2 class="popular-cities-title">Gallery of Expo Moments that Matter  </h2>
+   <div class="wrapper">
+    <div class="image">
+      <img src="https://images.unsplash.com/photo-1554995207-c18c203602cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="" />
+    </div>
+    <div class="image">
+      <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1475&q=80" alt="" />
+    </div>
+    <div class="image">
+      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="" />
+    </div>
+    <div class="image">
+      <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="" />
+    </div>
+    <div class="image">
+      <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="" />
+    </div>
+    <div class="image">
+      <img src="https://plus.unsplash.com/premium_photo-1678297269980-16f4be3a15a6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="" />
+    </div>
+    <div class="image">
+      <img src="https://images.unsplash.com/photo-1576941089067-2de3c901e126?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1578&q=80" alt="" />
+    </div>
+    <div class="image">
+      <img src="https://images.unsplash.com/photo-1513584684374-8bab748fbf90?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1465&q=80" alt="" />
+    </div>
+  </div>
+  
+  <div class="gallery">
+    <span class="control prev">
+      <i class="fas fa-chevron-left"></i>
+    </span>
+    <span class="control next">
+      <i class="fas fa-chevron-right"></i>
+    </span>
+    <div class="gallery-inner">
+      <img src="" alt="" />
+    </div>
+    <i class="fas fa-times close"></i>
+  </div>
+  </div>
+</div>
+  <style>
+    
+    .wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto;
+}
 
+  .gallery-wrapper .image {
+    width: 23.2%;
+    height: 267px;
+    overflow: hidden;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+
+  .gallery-wrapper .image:hover img {
+    transform: scale(1.2);
+  }
+
+  .gallery-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: 0.25s;
+  }
+
+  .gallery {
+  position: fixed; /* fixed instead of absolute */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 9999;
+  display: flex;
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.95);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  justify-content: center;
+  align-items: center;
+}
+
+.gallery.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(1);
+}
+.gallery-inner img.show {
+  transform: scale(1);
+}
+.gallery-inner {
+  max-width: 90%;
+  max-height: 85%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.gallery-inner img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 6px;
+  box-shadow: 0 0 25px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease;
+}
+.gallery-wrapper .control {
+  position: absolute;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 10000;
+  transition: color 0.2s;
+}
+.gallery-wrapper .control:hover {
+  color: #fff;
+}
+.gallery-wrapper .prev { left: 25px; }
+.gallery-wrapper .next { right: 25px; }
+
+.gallery-wrapper .close {
+  color: white;
+  font-size: 35px;
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  cursor: pointer;
+  z-index: 10000;
+  transition: color 0.2s;
+}
+.gallery-wrapper .close:hover {
+  color: #ff6666;
+}
+  .gallery-wrapper .hide {
+    display: none;
+  }
+
+  </style>
+  <script>
+  const images = document.querySelectorAll(".wrapper .image img");
+const gallery = document.querySelector(".gallery");
+const galleryImg = document.querySelector(".gallery-inner img");
+const close = document.querySelector(".gallery .close");
+const next = document.querySelector(".control.next");
+const prev = document.querySelector(".control.prev");
+let currentIndex = 0;
+
+images.forEach((img, index) => {
+  img.addEventListener("click", () => {
+    currentIndex = index;
+    showGallery();
+  });
+});
+
+function showGallery() {
+  gallery.classList.add("show");
+  galleryImg.src = images[currentIndex].src;
+}
+
+// Close button
+close.addEventListener("click", () => {
+  gallery.classList.remove("show");
+});
+
+// Background click
+gallery.addEventListener("click", (e) => {
+  if (e.target === gallery) {
+    gallery.classList.remove("show");
+  }
+});
+
+// Next/Prev controls with loop
+next.addEventListener("click", () => {
+  currentIndex = (currentIndex + 1) % images.length;
+  showGallery();
+});
+prev.addEventListener("click", () => {
+  currentIndex = (currentIndex - 1 + images.length) % images.length;
+  showGallery();
+});
+
+// Esc key
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") gallery.classList.remove("show");
+  if (e.key === "ArrowRight") next.click();
+  if (e.key === "ArrowLeft") prev.click();
+});
+
+  </script>
+<!-- gallery end -->
 <section class="property-serach">
   <div class="container">
-    <div class="browse-category-title">Have a property to sell?</div>
     <div class="property-sell">
       <div>
       <h4>List your property for sale</h4>
